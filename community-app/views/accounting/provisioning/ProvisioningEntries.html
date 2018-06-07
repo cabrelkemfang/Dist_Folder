@@ -11,14 +11,8 @@
     </div>
     <div class="card">
         <div class="content">
-            <div class="toolbar">
-                <h4></h4>
-            </div>
-            <br/>
-            <a href="#/createprovisioningentries" class="btn btn-primary pull-right" has-permission='VIEW_ALL_PROVISIONING_ENTRIES'>
+            <a href="#/createprovisioningentries" class="btn cbblue pull-right" has-permission='VIEW_ALL_PROVISIONING_ENTRIES'>
                 <i class="fa fa-plus "></i>{{'label.button.createprovisioning.entry' | translate}}</a>
-            <br>
-            <hr/>
             <table class="table">
                 <thead>
                     <tr class="graybg">
@@ -31,7 +25,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="pointer-main" ng-repeat="entryObject in entries.currentPageItems | filter:filterText">
+                    <tr  ng-repeat="entryObject in entries.currentPageItems | filter:filterText">
                         <td>{{entryObject.createdUser}}</td>
                         <td>{{entryObject.createdDate | DateFormat}}</td>
 
@@ -53,15 +47,15 @@
                     </tr>
                 </tbody>
             </table>
-            <ul class="pager">
-                <li class="previous">
-                    <a id="prev" ng-click="entries.previous()" href="" ng-disabled="!entries.hasPrevious()">&larr; {{'label.button.previous' | translate}}
+            <div class="row">
+                <div class="col-md-6">
+                    <a id="prev" ng-click="transactions.previous()" class="pull-left btn btn red" ng-disabled="!transactions.hasPrevious()">&larr; {{'label.button.previous' | translate}}
                     </a>
-                </li>
-                <li class="next">
-                    <a id="next" ng-click="entries.next()" href="" ng-disabled="!entries.hasNext()">{{'label.button.next' | translate}} </a>
-                </li>
-            </ul>
+                </div>
+                <div class="col-md-6">
+                    <a id="next" ng-click="transactions.next()" class="pull-right btn btn cbblue" ng-disabled="!transactions.hasNext()">{{'label.button.next' | translate}} </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

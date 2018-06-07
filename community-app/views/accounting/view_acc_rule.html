@@ -1,9 +1,21 @@
 <div class="content-container" ng-controller="ViewAccRuleController">
-    <ul class="breadcrumb">
-        <li><a href="#/accounting">{{'label.anchor.accounting' | translate}}</a></li>
-        <li><a href="#/accounting_rules">{{'label.anchor.accountingrules' | translate}}</a></li>
-        <li class="active">{{rule.name}}</li>
-    </ul>
+
+		<div class="w3-panel cbblue w3-center">
+				<ul class="breadcrumb">
+					<li>
+						<u>
+								<a href="#/accounting">{{'label.anchor.accounting' | translate}}</a>
+						</u>
+					</li>
+					<li>
+						<u>
+								<a href="#/accounting_rules">{{'label.anchor.accountingrules' | translate}}</a>
+						</u>
+					</li>
+					<li class="active color">{{rule.name}}</li>
+				</ul>
+			</div>
+
     <script type="text/ng-template" id="deleteaccrule.html">
         <div class="modal-header silver">
             <h3 class="bolder">{{'label.heading.delete' | translate}}</h3>
@@ -11,8 +23,8 @@
         <div class="modal-body ">
             <api-validate></api-validate>
             <br>
-            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
-            <button class="btn btn-primary" ng-click="delete()">{{'label.button.confirm' | translate}}</button>
+            <button class="btn cbblue" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn w3-red" ng-click="delete()">{{'label.button.confirm' | translate}}</button>
         </div>
     </script>
     <div class="card">
@@ -24,7 +36,7 @@
     		    <div class="row">
     		    	<div class="col-md-6"></div>
     		        <div class="col-md-6">
-    		               <a href="#/editaccrule/{{rule.id}}" class="pull-right btn btn-primary" has-permission='UPDATE_ACCOUNTINGRULE'><i
+    		               <a href="#/editaccrule/{{rule.id}}" class="pull-right btn cbblue" has-permission='UPDATE_ACCOUNTINGRULE'><i
     		                       class="fa fa-edit "></i>{{'label.button.edit' |translate}}</a>&nbsp;&nbsp;
     		               <a class="pull-right btn btn-danger" ng-click="deleteRule()"has-permission='DELETE_ACCOUNTINGRULE'><i
     		                       class="fa fa-trash"></i>{{'label.button.delete'| translate}}</a>

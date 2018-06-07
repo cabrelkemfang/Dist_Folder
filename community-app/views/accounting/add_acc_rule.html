@@ -1,20 +1,29 @@
 <div class="content-container">
-    <ul class="breadcrumb">
-        <li><a href="#/accounting">{{'label.anchor.accounting' | translate}}</a>
-        </li>
-        <li><a href="#/accounting_rules">{{'label.anchor.accountingrules' | translate}}</a>
-        </li>
-        <li class="active">{{'label.anchor.addrule' | translate}}</li>
-    </ul>
+
+
+
+        <div class="w3-panel cbblue w3-center">
+                <ul class="breadcrumb">
+                    <li>
+                        <u>
+                            <a href="#/accounting">{{'label.anchor.accounting' | translate}}</a>
+                        </u>
+                    </li>
+                    <li>
+                        <u>
+                            <a href="#/accounting_rules">{{'label.anchor.accountingrules' | translate}}</a>
+                        </u>
+                    </li>
+        
+                    <li class="active color">{{'label.anchor.addrule' | translate}}</li>
+                </ul>
+            </div>
     <div class="card">
         <div class="content">
-            <div class="toolbar">
-                <h4>{{ 'label.heading.accountingruletitle' | translate }}</h4>
-            </div>
-            <br/>
             <api-validate></api-validate>
             <form name="addaccountruleform" novalidate="" class="form-horizontal" ng-controller="AccCreateRuleController" rc-submit="submit()">
                 <fieldset>
+                    <legend>{{ 'label.heading.accountingruletitle' | translate }}</legend>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">{{ 'label.input.accountingrulename' | translate }}<span class="required">*</span>
                         </label>
@@ -64,9 +73,9 @@
                                             <select ng-model="availableDebit" multiple class="form-control clear" ng-options="debitTag.name for debitTag in debitTagOptions"></select>
                                         </div>
                                         <div class="col-sm-1 col-md-1 paddedtop25px">
-                                            <button type="button" class="btn btn-primary" data-ng-click="addDebitTag()"><i class="fa fa-angle-double-right"></i>
+                                            <button type="button" class="btn cbblue" data-ng-click="addDebitTag()"><i class="fa fa-angle-double-right"></i>
                                             </button>
-                                            <button type="button" class="btn btn-primary" data-ng-click="removeDebitTag()"><i class="fa fa-angle-double-left"></i>
+                                            <button type="button" class="btn cbblue" data-ng-click="removeDebitTag()"><i class="fa fa-angle-double-left"></i>
                                             </button>
                                         </div>
                                         <div class="col-sm-5 col-md-5">
@@ -92,9 +101,9 @@
                                             <select ng-model="availableCredit" multiple class="form-control clear" ng-options="creditTag.name for creditTag in creditTagOptions"></select>
                                         </div>
                                         <div class="col-sm-1 col-md-1 paddedtop25px">
-                                            <button type="button" class="btn btn-primary" data-ng-click="addCreditTag()"><i class="fa fa-angle-double-right"></i>
+                                            <button type="button" class="btn cbblue" data-ng-click="addCreditTag()"><i class="fa fa-angle-double-right"></i>
                                             </button>
-                                            <button type="button" class="btn btn-primary" data-ng-click="removeCreditTag()"><i class="fa fa-angle-double-left"></i>
+                                            <button type="button" class="btn cbblue" data-ng-click="removeCreditTag()"><i class="fa fa-angle-double-left"></i>
                                             </button>
                                         </div>
                                         <div class="col-sm-5 col-md-5">
@@ -110,8 +119,9 @@
                         </div>
                     </div>
                     <div class="col-md-offset-5">
-                        <a id="cancel" href="#/accounting_rules" class="btn btn-default">{{ 'label.button.cancel' | translate }}</a>
-                        <button id="save" type="submit" class="btn btn-primary" has-permission='CREATE_ACCOUNTINGRULE'>{{ 'label.button.save' | translate }}</button>
+                       
+                        <button id="save" type="submit" class="btn cbblue" has-permission='CREATE_ACCOUNTINGRULE'>{{ 'label.button.save' | translate }}</button>
+                        <a id="cancel" href="#/accounting_rules" class="btn w3-red">{{ 'label.button.cancel' | translate }}</a>
                     </div>
                 </fieldset>
             </form>

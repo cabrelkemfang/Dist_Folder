@@ -1,15 +1,24 @@
 <div class="content-container">
-    <ul class="breadcrumb">
-        <li><a href="#/accounting">{{'label.anchor.accounting' | translate}}</a></li>
-        <li><a href="#/accounts_closure">{{'label.anchor.accountsclosure' | translate}}</a></li>
-        <li class="active">{{'label.anchor.createclosure' | translate}}</li>
-    </ul>
+
+		<div class="w3-panel cbblue w3-center">
+				<ul class="breadcrumb">
+					<li>
+						<u>
+							<a href="#/accounting">{{'label.anchor.accounting' | translate}}</a>
+						</u>
+					</li>
+					<li>
+						<u>
+							<a href="#/accounts_closure">{{'label.anchor.accountsclosure' | translate}}</a>
+						</u>
+					</li>
+					<li class="active color">{{'label.anchor.createclosure' | translate}}</li>
+				</ul>
+			</div>
     <div class="card">
     	<div class="content">
-    		<div class="toolbar">
-    			<h4>{{ 'label.heading.createclosure' | translate }}</h4>
-    		</div>
-    		<br/>
+    		<fieldset>
+				<legend>{{ 'label.heading.createclosure' | translate }}</legend>
     		<form name="createclosureform" novalidate="" class="form-horizontal" ng-controller="AccountingClosureController"
     		      ng-submit="submit()">
     		    <api-validate></api-validate>
@@ -44,10 +53,12 @@
     		        </div>
     		    </div>
     		    <div class="col-md-offset-3">
-    		        <a id="cancel" href="#/accounts_closure" class="btn btn-default">{{ 'label.button.cancel' | translate }}</a>
-    		        <button id="save" type="submit" class="btn btn-primary" has-permission='CREATE_GLCLOSURE'>{{ 'label.button.save' | translate }}</button>
+						<button id="save" type="submit" class="btn cbblue" has-permission='CREATE_GLCLOSURE'>{{ 'label.button.save' | translate }}</button>
+    		        <a id="cancel" href="#/accounts_closure" class="btn w3-red">{{ 'label.button.cancel' | translate }}</a>
+    		       
     		    </div>
-    		</form>
+			</form>
+		</fieldset>
     	</div>
     </div>
 </div>

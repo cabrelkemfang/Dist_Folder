@@ -1,8 +1,15 @@
 <div class="content-container" ng-controller="ViewTransactionController">
-        <ul class="breadcrumb" ng-if="productName == null">
-            <li><a href="#/accounting">{{'label.anchor.accounting' | translate}}</a></li>
-            <li class="active">{{'label.anchor.viewtransaction' | translate}}</li>
-        </ul>
+
+        <div class="w3-panel cbblue w3-center">
+                <ul class="breadcrumb">
+                    <li>
+                        <u>
+                            <a href="#/accounting">{{'label.anchor.accounting' | translate}}</a>
+                        </u>
+                    </li>
+                    <li class="active color">{{'label.anchor.viewtransaction' | translate}}</li>
+                </ul>
+            </div>
         <ul class="breadcrumb" ng-if="productName != null">
             <li ng-if="groupId != null"><a href="#/viewgroup/{{groupId}}">{{groupName}}</a></li>
             <li ng-if="clientId != null"><a href="#/viewclient/{{clientId}}">{{clientName}}</a></li>
@@ -19,7 +26,7 @@
                 <api-validate></api-validate>
                 <br>
                 <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
-                <button class="btn btn-primary" ng-click="redirect()">{{'label.button.redirecttonewtrx' | translate}}
+                <button class="btn cbblue" ng-click="redirect()">{{'label.button.redirecttonewtrx' | translate}}
                 </button>
             </div>
         </script>
@@ -118,7 +125,7 @@
                 </div>
                 <br>
                 <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
-                <button class="btn btn-primary" ng-click="reverse()">{{'label.button.reverse' | translate}}</button>
+                <button class="btn cbblue" ng-click="reverse()">{{'label.button.reverse' | translate}}</button>
             </div>
         </script>
         <div class="card">
@@ -133,7 +140,7 @@
                                 <span class="required" data-ng-show="!flag"><strong>{{ 'label.transactionisreversedonce' | translate
                                 }}</strong></span>
                                 <div class="btn-group">
-                                    <a data-ng-show="flag" ng-click="reverseTransaction(transactionNumber)" class="btn btn-primary" has-permission='REVERSE_JOURNALENTRY'><i class="fa fa-undo "></i>{{'label.button.reverse' | translate}}</a>
+                                    <a data-ng-show="flag" ng-click="reverseTransaction(transactionNumber)" class="btn cbblue" has-permission='REVERSE_JOURNALENTRY'><i class="fa fa-undo "></i>{{'label.button.reverse' | translate}}</a>
                                 </div>
                             </div>
                         </span>
@@ -190,7 +197,7 @@
                     </div>
                     <div class="center" ng-if="productName != null">
                         <a href="#/viewloanaccount/{{loanId}}"
-                          class="btn btn-primary center"><i
+                          class="btn cbblue center"><i
                             class=""></i>{{'label.button.back' | translate}}</a></div>
                 </div>
             </div>

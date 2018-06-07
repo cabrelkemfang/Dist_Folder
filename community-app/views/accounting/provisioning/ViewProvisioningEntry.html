@@ -6,9 +6,6 @@
     </ul>
     <div class="card">
         <div class="content">
-            <div class="toolbar">
-                <h4></h4>
-            </div>
             <form name="createprovisioningcriteriaform" novalidate="" class="form-horizontal" rc-submit="submit()">
                 <api-validate></api-validate>
                 <fieldset>
@@ -17,7 +14,7 @@
                         {{'label.heading.amounttobereserved' | translate}} {{':  '}} {{totalReservedAmount | number}}
 
                     </h3>
-                    <hr>
+                   
                     <div class="form-group">
                         <div class="col-sm-3">
                             <select id="offices" chosen="offices" class="form-control" ng-model="formData.officeId" ng-options="office.id as office.name for office in offices" value="{{office.id}}">

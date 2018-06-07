@@ -1,11 +1,20 @@
 <div ng-controller="AccViewGLAccountContoller" class="col-md-12">
-    <div>
-        <ul class="breadcrumb">
-            <li><a href="#/accounting">{{'label.anchor.accounting' | translate}}</a></li>
-            <li><a href="#/accounting_coa">{{'label.anchor.coa' | translate}}</a></li>
-            <li class="active">{{glaccount.name}}</li>
-        </ul>
-    </div>
+
+		<div class="w3-panel cbblue w3-center">
+				<ul class="breadcrumb">
+					<li>
+						<u>
+							<a href="#/accounting">{{'label.anchor.accounting' | translate}}</a>
+						</u>
+					</li>
+					<li>
+						<u>
+							<a href="#/accounting_coa">{{'label.anchor.coa' | translate}}</a>
+						</u>
+					</li>
+					<li class="active color">{{glaccount.name}}</li>
+				</ul>
+			</div>
     <api-validate></api-validate>
     <script type="text/ng-template" id="deleteglacc.html">
         <div class="modal-header silver">
@@ -14,22 +23,22 @@
         <div class="modal-body ">
             <api-validate></api-validate>
             <br>
-            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
-            <button class="btn btn-primary" ng-click="delete()">{{'label.button.confirm' | translate}}</button>
+            <button class="btn cbblue" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn w3-red" ng-click="delete()">{{'label.button.confirm' | translate}}</button>
         </div>
     </script>
     <div class="col-md-12 well">
     	<h3 class="bolder">{{glaccount.name}}
 	      <div class="pull-right">
 	          <div class="btn-group">
-	              <a ng-show="glaccount.usage.value == 'HEADER'" class="btn btn-primary" href="#/createglaccount?parent={{glaccount.id}}&acctype={{glaccount.type.value}}" has-permission='CREATE_GLACCOUNT'><i
+	              <a ng-show="glaccount.usage.value == 'HEADER'" class="btn cbblue" href="#/createglaccount?parent={{glaccount.id}}&acctype={{glaccount.type.value}}" has-permission='CREATE_GLACCOUNT'><i
 	                      class="fa fa-lock fa fa-plus"></i>{{'label.button.addchildaccount' | translate}}</a>
-	              <a ng-hide="glaccount.disabled" class="btn btn-primary" ng-click="changeState(glaccount.disabled)" has-permission='UPDATE_GLACCOUNT'><i
+	              <a ng-hide="glaccount.disabled" class="btn red" ng-click="changeState(glaccount.disabled)" has-permission='UPDATE_GLACCOUNT'><i
 	                      class="fa fa-lock "></i>{{'label.button.disable' | translate}}</a>
-	              <a ng-show="glaccount.disabled" class="btn btn-primary" ng-click="changeState(glaccount.disabled)" has-permission='UPDATE_GLACCOUNT'><i
+	              <a ng-show="glaccount.disabled" class="btn w3-green" ng-click="changeState(glaccount.disabled)" has-permission='UPDATE_GLACCOUNT'><i
 	                      class="fa fa-unlock "></i>{{'label.button.enable' | translate}}</a>
-	              <a href="#/editglaccount/{{glaccount.id}}" class="btn btn-primary" has-permission='UPDATE_GLACCOUNT'><i class="fa fa-edit "></i>{{'label.button.edit' | translate}}</a>
-	              <button class="btn btn-primary" ng-click="deleteGLAccount()" has-permission='DELETE_GLACCOUNT'><i class="fa fa-trash "></i>{{'label.button.delete' | translate}}</button>
+	              <a href="#/editglaccount/{{glaccount.id}}" class="btn cbblue" has-permission='UPDATE_GLACCOUNT'><i class="fa fa-edit "></i>{{'label.button.edit' | translate}}</a>
+	              <button class="btn w3-red" ng-click="deleteGLAccount()" has-permission='DELETE_GLACCOUNT'><i class="fa fa-trash "></i>{{'label.button.delete' | translate}}</button>
 	          </div>
 	      </div>
 	      <hr>

@@ -1,18 +1,23 @@
 <div class="content-container">
-    <ul class="breadcrumb">
-        <li><a href="#/accounting">{{'label.anchor.accounting' | translate}}</a></li>
-        <li class="active">{{'label.anchor.frequentpostings' | translate}}</li>
-    </ul>
+
+        <div class="w3-panel cbblue w3-center">
+                <ul class="breadcrumb">
+                    <li>
+                        <u>
+                            <a href="#/accounting">
+                                {{'label.anchor.accounting' | translate}}</a>
+                        </u>
+                    </li>
+                    <li class="active color">{{'label.anchor.frequentpostings' | translate}}</li>
+                </ul>
+            </div>
     <div class="card">
         <div class="content">
-            <div class="toolbar">
-                <h4>{{ 'label.heading.frequentpostings' | translate }}</h4>
-            </div>
-            <br/>
             <form name="freqpostingform" novalidate="" class="form-horizontal" ng-controller="AccFreqPostingController"
                   rc-submit="submit()">
                 <api-validate></api-validate>
                 <fieldset>
+                    <legend>{{ 'label.heading.frequentpostings' | translate }}</legend>
                     <div class="form-group">
                         <label class="control-label col-sm-2">{{ 'label.input.office' | translate }}<span class="required">*</span></label>
 
@@ -99,7 +104,7 @@
                         <label class="control-label col-sm-2">{{ 'label.anchor.showpaymentdetails' | translate}}</label>
 
                         <div class="col-sm-3">
-                            <a id="clickToShow" class="btn btn-primary" ng-click="showPaymentDetails=!showPaymentDetails">
+                            <a id="clickToShow" class="btn cbblue" ng-click="showPaymentDetails=!showPaymentDetails">
                                 <i ng-show="showPaymentDetails" class="fa fa-minus "></i>
                                 <i ng-show="!showPaymentDetails" class="fa fa-plus "></i>
                             </a>
@@ -155,8 +160,9 @@
                         </div>
                     </div>
                     <div class="col-md-offset-5">
-                        <a id="cancel" href="#/accounting" class="btn btn-default">{{ 'label.button.cancel' | translate }}</a>
-                        <button id="save" type="submit" class="btn btn-primary" has-permission='CREATE_JOURNALENTRY'>{{ 'label.button.save' | translate }}</button>
+                            <button id="save" type="submit" class="btn cbblue" has-permission='CREATE_JOURNALENTRY'>{{ 'label.button.save' | translate }}</button>
+                        <a id="cancel" href="#/accounting" class="btn w3-red">{{ 'label.button.cancel' | translate }}</a>
+                       
                     </div>
                 </fieldset>
             </form>
